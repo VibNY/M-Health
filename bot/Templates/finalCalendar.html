@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+            box-sizing: border-box
+        }
+        
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial;
+        }
+        
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
+        }
+        
+        .tablink:hover {
+            background-color: burlywood;
+        }
+        /* Style the tab content (and add height:100% for full page content) */
+        
+        .tabcontent {
+            color: white;
+            display: none;
+            padding: 100px 20px;
+            height: 100%;
+        }
+        
+        #Home {
+            background-color: lightskyblue;
+            transition: 0.2s;
+        }
+        
+        #YourMeds {
+            background-color: lightskyblue;
+            transition: 0.2s;
+        }
+        
+        #MyBot {
+            background-color: lightskyblue;
+            transition: 0.2s;
+        }
+        
+        #About {
+            background-color: lightskyblue;
+            transition: 0.2s;
+        }
+        
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: min-content;
+            height: min-content;
+        }
+        
+        #trans1 {
+            width: 150px;
+            height: 100px;
+            background: lightseagreen;
+            transition: width 2s, height 4s;
+            border-radius: 25px;
+            text-align: justify;
+            transition-timing-function: ease-in-out;
+            padding: 14px 28px;
+            margin: left;
+            vertical-align: middle;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        #trans1:hover {
+            width: 175px;
+            opacity: 0.8;
+        }
+        
+        #trans2 {
+            width: 150px;
+            height: 100px;
+            background: lightseagreen;
+            transition: width 2s, height 4s;
+            border-radius: 25px;
+            text-align: justify;
+            transition-timing-function: ease-in-out;
+            padding: 20px 30px;
+            margin: center;
+            vertical-align: middle;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        #trans2:hover {
+            width: 175px;
+            opacity: 0.8;
+        }
+        
+        #trans3 {
+            width: 150px;
+            height: 100px;
+            background: lightseagreen;
+            transition: width 2s, height 4s;
+            border-radius: 25px;
+            text-align: justify;
+            transition-timing-function: ease-in-out;
+            padding: 14px 28px;
+            margin: right;
+            vertical-align: middle;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        #trans3:hover {
+            width: 175px;
+            opacity: 0.8;
+        }
+        
+        .month {
+            padding: 70px 25px;
+            width: 100%;
+            background: #1abc9c;
+            text-align: center;
+        }
+        
+        .month ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .month ul li {
+            color: white;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .month .prev {
+            float: left;
+            padding-top: 10px;
+        }
+        
+        .month .next {
+            float: right;
+            padding-top: 10px;
+        }
+        
+        .weekdays {
+            margin: 0;
+            padding: 10px 0;
+            background-color: #ddd;
+        }
+        
+        .weekdays li {
+            display: inline-block;
+            width: 13.6%;
+            color: #666;
+            text-align: center;
+        }
+        
+        .days {
+            padding: 10px 0;
+            background: #eee;
+            margin: 0;
+        }
+        
+        .days li {
+            list-style-type: none;
+            display: inline-block;
+            width: 13.6%;
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: #777;
+        }
+        
+        .days li .active {
+            padding: 5px;
+            background: #1abc9c;
+            color: white !important
+        }
+        /* Add media queries for smaller screens */
+        
+        @media screen and (max-width:400px) {
+            .weekdays li,
+            .days li {
+                width: 13.1%;
+            }
+        }
+        
+        @media screen and (max-width: 400px) {
+            .weekdays li,
+            .days li {
+                width: 12.5%;
+            }
+            .days li .active {
+                padding: 2px;
+            }
+        }
+        
+        @media screen and (max-width: 290px) {
+            .weekdays li,
+            .days li {
+                width: 12.2%;
+            }
+        }
+        
+        .button {
+            background-color: lightseagreen;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+        }
+    }
+    .button:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+    </style>
+</head>
+<h1>
+    <img src="D:\Spacejam\941f321b-132f-48ea-a3b7-17f1870bdb01_200x200.png" class="center">
+</h1>
+
+<body>
+
+
+    <button class="tablink" onclick="openPage('Home', this, 'lightskyblue')">Home</button>
+    <button class="tablink" onclick="openPage('YourMeds', this, 'lightskyblue')" id="defaultOpen">Your Meds</button>
+    <button class="tablink" onclick="openPage('MyBot', this, 'lightskyblue')">MyBot</button>
+    <button class="tablink" onclick="openPage('About', this, 'lightskyblue')">About</button>
+
+    <div id="Home" class="tabcontent">
+        <h3>Home</h3>
+        <p></p>
+        <p></p>
+        <p></p>
+
+    </div>
+
+    <div id="YourMeds" class="tabcontent">
+        <div class="month">
+            <ul>
+                <li onclick="myFunction1()" class="prev">&#10094;</li>
+                <li onclick="myFunction2()" class="next">&#10095;</li>
+                <li id="Month_name">
+                    March<br>
+                </li>
+                <li id="year">
+                    <span style="font-size:18px">2021</span>
+                </li>
+            </ul>
+        </div>
+        <ul class="weekdays">
+            <li id=100>Mon</li>
+            <li id=101>Tue</li>
+            <li id=102>Wed</li>
+            <li id=103>Thu</li>
+            <li id=104>Fri</li>
+            <li id=105>Sat</li>
+            <li id=106>Sun</li>
+        </ul>
+        <script>
+            var n = 2;
+            var Months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+            var y = 2021
+
+            function myFunction1() {
+                if (n == 0) {
+                    y = y - 1;
+                    document.getElementById("year").innerHTML = y;
+                    n = 11;
+                } else {
+                    n = n - 1;
+                }
+                document.getElementById("Month_name").innerHTML = Months[n];
+                var FirstDay = String(new Date(y, n, 1));
+                var First_day = (FirstDay[0] + FirstDay[1] + FirstDay[2]);
+                var Days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+                var x = Days.indexOf(First_day);
+                var Days_Output = [];
+                var j = 0;
+                for (i = x; i < x + 7; i++) {
+                    Days_Output[j] = Days[i];
+                    j++;
+                }
+                for (i = 100; i < 108; i++) {
+                    document.getElementById(i).innerHTML = Days_Output[i - 100];
+                }
+            }
+
+            function myFunction2() {
+                if (n == 11) {
+                    y = y + 1;
+                    document.getElementById("year").innerHTML = y;
+                    n = 0;
+                } else {
+                    n = n + 1;
+                }
+                document.getElementById("Month_name").innerHTML = Months[n];
+                var FirstDay = String(new Date(y, n, 1));
+                var First_day = (FirstDay[0] + FirstDay[1] + FirstDay[2]);
+                var Days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+                var x = Days.indexOf(First_day);
+                var Days_Output = [];
+                var j = 0;
+                for (i = x; i < x + 7; i++) {
+                    Days_Output[j] = Days[i];
+                    j++;
+                }
+                for (i = 100; i < 108; i++) {
+                    document.getElementById(i).innerHTML = Days_Output[i - 100];
+                }
+            }
+        </script>
+        <ul class="days">
+            <li id=1>1</li>
+            <li id=2>2</li>
+            <li id=3>3</li>
+            <li id=4>4</li>
+            <li id=5>5</li>
+            <li id=6>6</li>
+            <li id=7>7</li>
+            <li id=8>8</li>
+            <li id=9>9</li>
+            <li id=10>10</li>
+            <li id=11>11</li>
+            <li id=12>12</li>
+            <li id=13>13</li>
+            <li id=14>14</li>
+            <li id=15>15</li>
+            <li id=16>16</li>
+            <li id=17>17</li>
+            <li id=18>18</li>
+            <li id=19>19</li>
+            <li id=20>20</li>
+            <li id=21>21</li>
+            <li id=22>22</li>
+            <li id=23>23</li>
+            <li id=24>24</li>
+            <li id=25>25</li>
+            <li id=26>26</li>
+            <li id=27><span class="active">27</span></li>
+            <li id=28>28</li>
+            <li id=29>29</li>
+            <li id=30>30</li>
+            <li id=31>31</li>
+        </ul>
+        <button onclick="update_calendar()" class="button button">Update Calender</button>
+        <script>
+            function update_calendar() {
+                switch (n) {
+                    case 0:
+                        document.getElementById("31").innerHTML = "31";
+                        document.getElementById("29").innerHTML = "29";
+                        document.getElementById("30").innerHTML = "30";
+                        break;
+                    case 1:
+                        document.getElementById("31").innerHTML = "_";
+                        document.getElementById("30").innerHTML = "_";
+                        document.getElementById("29").innerHTML = "_";
+                        break;
+                    case 2:
+                        document.getElementById("30").innerHTML = "30";
+                        document.getElementById("29").innerHTML = "29";
+                        document.getElementById("31").innerHTML = "31";
+                        break;
+                    case 3:
+                        document.getElementById("31").innerHTML = "_";
+                        break;
+                    case 4:
+                        document.getElementById("31").innerHTML = "31";
+                        break;
+                    case 5:
+                        document.getElementById("31").innerHTML = "_";
+                        break;
+                    case 6:
+                        document.getElementById("31").innerHTML = "31";
+                        break;
+                    case 7:
+                        document.getElementById("31").innerHTML = "31";
+                        break;
+                    case 8:
+                        document.getElementById("31").innerHTML = "_";
+                        break;
+                    case 9:
+                        document.getElementById("31").innerHTML = "31";
+                        break;
+                    case 10:
+                        document.getElementById("31").innerHTML = "_";
+                        break;
+                    case 11:
+                        document.getElementById("31").innerHTML = "31";
+                        break;
+                }
+            }
+        </script>
+        </ul>
+        <h3></h3>
+        </script>
+        <button onclick="myFunction()" class="button button">View Dates</button>
+        <script>
+            function myFunction() {
+                var i;
+                for (i = 1; i < 29; i = i + 3) {
+                    var x = document.getElementById(i);
+                    x.style.color = "red";
+                }
+            }
+        </script>
+        <button class="button button">Your Medicines</button>
+
+    </div>
+
+    <div id="MyBot" class="tabcontent">
+
+    </div>
+
+    <div id="About" class="tabcontent">
+        <h3>Contact</h3>
+        <p></p>
+    </div>
+
+    <script>
+        function openPage(pageName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+        }
+
+        document.getElementById("defaultOpen").click();
+    </script>
+
+
+</body>
+
+</html>

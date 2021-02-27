@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'guide/main.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#"></a>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+    <a class="nav-link" href="home"></a>
+  </li>
+    <li class="nav-item">
+      <a class="nav-link" href="test"></a>
+    </li>
+</li>
+    <li class="nav-item">
+      <a class="nav-link" href="explore"></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"></a>
+  </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"></a>
+    </li>
+
+  </ul>
+</nav>
+
+<br>
+<br>
+<div class="text-center">
+<h1 class="display-1">Welcome!</h1>
+<p>Initiate a convo with Hello</p>
+<p class="lead"></p>
+</div>
+
+{%csrf_token%}
+<form action="bot" method="post">
+{%csrf_token%}
+Enter:<input type="text" name="m">
+<input type="submit" value="Enter" formaction="/bot/">
+</form>
+
+<p>{{rep}}</p>
+
+<h1><br></h1>
+</body>
+</html>
