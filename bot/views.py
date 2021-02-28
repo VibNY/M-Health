@@ -36,20 +36,25 @@ def home(request):
                         s="Think happy thoughts and take deep breaths. Try to compose yourself. You have the strength in yourself to overcome your fear. Use the bot to feel lighter."
                         return render(request, 'home.html',{"r":s})
                 print(r)
-        '''print("yo")
-        global name
-        name=request.POST["name"]
-        psd=request.POST["psd"]
-        dn=request.POST["dn"]
-        dd=request.POST["dd"]
-        sd=request.POST["sd"]
-        freq=request.POST["freq"]
-        fo=open("details.txt","a")
-        fo.write(name+" "+psd+" "+dn+" "+dd+" "+sd+" "+freq+"\n")
-        fo.close()'''
-        return render(request, 'home.html')
     else:
-        return render(request, 'home.html')
+            return render(request, 'home.html')
+
+def web(request):
+        if request.method=="POST":
+                print("yo")
+                global name
+                name=request.POST["name"]
+                psd=request.POST["psd"]
+                dn=request.POST["dn"]
+                dd=request.POST["dd"]
+                sd=request.POST["sd"]
+                freq=request.POST["freq"]
+                fo=open("details.txt","a")
+                fo.write(name+" "+psd+" "+dn+" "+dd+" "+sd+" "+freq+"\n")
+                fo.close()
+                return render(request, 'home.html')
+        else:
+                return render(request, 'home.html')
 def bot(request):
     if request.method=="POST":
         n=0

@@ -21,5 +21,6 @@ urlpatterns = [
     path('home/bot/', views.bot),
     path('signup/', views.signup),
     path('home/', views.home),
+    path('home1/', views.web),
     path('home/calendar/', views.calendar)
 ]
