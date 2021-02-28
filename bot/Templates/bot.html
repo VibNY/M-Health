@@ -248,17 +248,19 @@
     <button class="tablink" onclick="openPage('About', this, 'lightskyblue')">About</button>
 
    <div id="MyBot" class="tabcontent">
+    <h2 style="color:black; font-family:cursive;">Welcome Say Hi to the bot to initiate a conversation. Type "heal" to access some of our healing techniques.</h2>
         {%csrf_token%}
-        <form action="bot" method="post">
-            {%csrf_token%} Enter:
+        <form action="bot" method="post" style="color:black; font-family:cursive;">
+            {%csrf_token%} Type here:
             <input type="text" name="m">
             <input type="submit" value="Enter" formaction="/home/bot/">
         </form>
 
-        <p>{{rep}}</p>
+        <h3 style="color:black; font-family:cursive;">{{rep}}</h3>
         </div>
-
+    <form>
     <div id="YourMeds" class="tabcontent">
+        <input type="submit" value="Calendar" formaction="/home/calendar/">
         <div class="month">
             <ul>
                 <li class="prev">&#10094;</li>
@@ -323,14 +325,30 @@
         <button class="button button">Shadow on Hover</button>
 
     </div>
+</form>
 
      <div id="Home" class="tabcontent">
-        <h3>Home</h3>
-        <p id="trans1">How are you feeling today?</p>
-        <p id="trans2">Describe your day</p>
-        <p id="trans3">What do you want to do today?</p>
-
-    </div> 
+        <h3 style="color:black; font-family:cursive;">Hey there! How are you feeling today?</h3>
+        <form action="home" method="post">
+            {%csrf_token%}
+        <span style='font-size:100px;'>
+            <input type="submit" name="h" value="&#128512;" style="font-size:100px;" formaction="/home/">
+        </span>
+        <span style='font-size:100px;'>
+            <input type="submit" name="h" value="&#128557;" style="font-size:100px;" formaction="/home/">
+        </span>
+        <span style='font-size:100px;'>
+            <input type="submit" name="h" value="&#128545;" style="font-size:100px;" formaction="/home/">
+        </span>
+         <span style='font-size:100px;'>
+            <input type="submit" name="h" value="&#128561;" style="font-size:100px;" formaction="/home/">
+        </span>
+        <span style='font-size:100px; '>
+            <input type="submit" name="h" value="&#128560;" style="font-size:100px;" formaction="/home/">
+        </span>
+            <h3 style="color:black; font-family:cursive;">{{r}}</h3>
+    </form>
+    </div>
 
         <div id="About" class="tabcontent">
             <h3>Contact</h3>

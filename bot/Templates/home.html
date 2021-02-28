@@ -239,11 +239,26 @@
     <button class="tablink" onclick="openPage('About', this, 'lightskyblue')">About</button>
 
     <div id="Home" class="tabcontent">
-        <h3>Home</h3>
-        <p id="trans1">How are you feeling today?</p>
-        <p id="trans2">Describe your day</p>
-        <p id="trans3">What do you want to do today?</p>
-
+        <h3 style="color:black; font-family:cursive;">Hey there! How are you feeling today?</h3>
+        <form action="home" method="post">
+            {%csrf_token%}
+        <span style='font-size:100px;'>
+            <input type="submit" name="h" value="&#128512;" style="font-size:100px;" formaction="/home/">
+        </span>
+        <span style='font-size:100px;'>
+            <input type="submit" name="h" value="&#128557;" style="font-size:100px;" formaction="/home/">
+        </span>
+        <span style='font-size:100px;'>
+            <input type="submit" name="h" value="&#128545;" style="font-size:100px;" formaction="/home/">
+        </span>
+         <span style='font-size:100px;'>
+            <input type="submit" name="h" value="&#128561;" style="font-size:100px;" formaction="/home/">
+        </span>
+        <span style='font-size:100px; '>
+            <input type="submit" name="h" value="&#128560;" style="font-size:100px;" formaction="/home/">
+        </span>
+            <h3 style="color:black; font-family:cursive;">{{r}}</h3>
+    </form>
     </div>
 
     <div id="YourMeds" class="tabcontent">

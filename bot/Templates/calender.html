@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -235,7 +236,7 @@
     </style>
 </head>
 <h1>
-    <img src="D:\Spacejam\941f321b-132f-48ea-a3b7-17f1870bdb01_200x200.png" class="center">
+    <img src="{% static 'bot/mh.jpg' %}" class="center">
 </h1>
 
 <body>
@@ -247,11 +248,26 @@
     <button class="tablink" onclick="openPage('About', this, 'lightskyblue')">About</button>
 
     <div id="Home" class="tabcontent">
-        <h3>Home</h3>
-        <p></p>
-        <p></p>
-        <p></p>
-
+        <h3 style="color:black; font-family:cursive;">Hey there! How are you feeling today?</h3>
+        <form action="home" method="post">
+            {%csrf_token%}
+        <span style='font-size:100px;'>
+            <input type="submit" name="h" value="&#128512;" style="font-size:100px;" formaction="/home/">
+        </span>
+        <span style='font-size:100px;'>
+            <input type="submit" name="h" value="&#128557;" style="font-size:100px;" formaction="/home/">
+        </span>
+        <span style='font-size:100px;'>
+            <input type="submit" name="h" value="&#128545;" style="font-size:100px;" formaction="/home/">
+        </span>
+         <span style='font-size:100px;'>
+            <input type="submit" name="h" value="&#128561;" style="font-size:100px;" formaction="/home/">
+        </span>
+        <span style='font-size:100px; '>
+            <input type="submit" name="h" value="&#128560;" style="font-size:100px;" formaction="/home/">
+        </span>
+            <h3 style="color:black; font-family:cursive;">{{r}}</h3>
+    </form>
     </div>
 
     <div id="YourMeds" class="tabcontent">
@@ -427,10 +443,11 @@
         <button class="button button">Your Medicines</button>
 
     </div>
-
+    <form>
     <div id="MyBot" class="tabcontent">
-
+        <input type="submit" value="MyBot" formaction="/home/bot/">
     </div>
+</form>
 
     <div id="About" class="tabcontent">
         <h3>Contact</h3>

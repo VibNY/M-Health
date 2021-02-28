@@ -17,7 +17,26 @@ def calendar(request):
         return render(request, 'calender.html', {"sd":sd,"freq":freq})
 def home(request):
     if request.method=="POST":
-        print("yo")
+        if request.POST['h']:
+                r=ord(request.POST['h'])
+                print(r)
+                if r==128512:
+                        s="That's Great! Keep seeking positivity. Use the bot to share your happiness."
+                        return render(request, 'home.html',{"r":s})
+                if r==128557:
+                        s="Hope you feel better soon. Remember, these sad times too shall pass. Try using our bot to express yourself."
+                        return render(request, 'home.html',{"r":s})
+                if r==128545:
+                        s="Take some deep breaths. Count to ten. Once you feel less frustrated, do a deep introspection. Also try using our bot to vent your anger."
+                        return render(request, 'home.html',{"r":s})
+                if r==128561:
+                        s="Evaluate what caused feelings of shock in you. Use the bot to introspect."
+                        return render(request, 'home.html',{"r":s})
+                if r==128560:
+                        s="Think happy thoughts and take deep breaths. Try to compose yourself. You have the strength in yourself to overcome your fear. Use the bot to feel lighter."
+                        return render(request, 'home.html',{"r":s})
+                print(r)
+        '''print("yo")
         global name
         name=request.POST["name"]
         psd=request.POST["psd"]
@@ -27,7 +46,7 @@ def home(request):
         freq=request.POST["freq"]
         fo=open("details.txt","a")
         fo.write(name+" "+psd+" "+dn+" "+dd+" "+sd+" "+freq+"\n")
-        fo.close()
+        fo.close()'''
         return render(request, 'home.html')
     else:
         return render(request, 'home.html')
